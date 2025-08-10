@@ -2,120 +2,267 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Protected Gallery</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+    <title>Title</title>
 
-        .login-container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
+
+    <style>
+          /* 新增的密码验证样式 */
+    #password-container {
+        text-align: center;
+        margin: 100px auto;
+        max-width: 400px;
+    }
+    #password-input {
+        padding: 10px;
+        width: 200px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    #submit-btn {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    #submit-btn:hover {
+        background-color: #45a049;
+    }
+    #error-msg {
+        color: red;
+        margin-top: 10px;
+        display: none;
+    }
+
+        table {
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
             text-align: center;
         }
-
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
+        caption {
+            font-weight: bold;
+            margin-bottom: 10px;
         }
-
-        input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 16px;
+        .content{
+            display: none;
         }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-
-
-
     </style>
 </head>
 <body>
-    <div class="login-container" id="loginContainer">
-        <h1>Enter Password</h1>
-        <input type="password" id="passwordInput" placeholder="Enter your password">
-        <button onclick="checkPassword()">Submit</button>
-        <p class="error" id="errorMessage">Incorrect password. Please try again.</p>
-    </div>
+ <div id="password-container">
+    <h2>请输入访问密码</h2>
+    <input type="password" id="password-input" placeholder="输入密码">
+    <button id="submit-btn">提交</button>
+    <div id="error-msg">密码错误，请重试！</div>
+</div>
+ <div class="content">
+    <table>
+        <caption>1.jpg</caption>
+        <thead>
+            <tr>
+                <th>answer</th>
+                <th>question_order</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Y</td><td>1</td></tr>
+            <tr><td>Y</td><td>2</td></tr>
+            <tr><td>N</td><td>3</td></tr>
+            <tr><td>N</td><td>4</td></tr>
+            <tr><td>Y</td><td>5</td></tr>
+            <tr><td>N</td><td>6</td></tr>
+            <tr><td>N</td><td>7</td></tr>
+            <tr><td>N</td><td>8</td></tr>
+            <tr><td>N</td><td>9</td></tr>
+            <tr><td>N</td><td>10</td></tr>
+            <tr><td>Y</td><td>11</td></tr>
+            <tr><td>N</td><td>12</td></tr>
+            <tr><td>Y</td><td>13</td></tr>
+            <tr><td>N</td><td>14</td></tr>
+            <tr><td>Y</td><td>15</td></tr>
+            <tr><td>Y</td><td>16</td></tr>
+            <tr><td>N</td><td>17</td></tr>
+            <tr><td>Y</td><td>18</td></tr>
+            <tr><td>N</td><td>19</td></tr>
+            <tr><td>N</td><td>20</td></tr>
+        </tbody>
+    </table>
 
-    <div>
-        <img src="1.jpg" alt="Image 1">
-    </div>
-    <div>
-        <img src="2.jpg" alt="Image 2">
-    </div>
-    <div>
-        <img src="3.jpg" alt="Image 3">
-    <div>
-        <img src="4.jpg" alt="Image 4">
-    </div>
+    <table>
+        <caption>2.jpg</caption>
+        <thead>
+            <tr>
+                <th>answer</th>
+                <th>question_order</th>
+                <th>question_answer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>A</td><td>1</td><td></td></tr>
+            <tr><td>B</td><td>2</td><td></td></tr>
+            <tr><td>A</td><td>3</td><td></td></tr>
+            <tr><td>B</td><td>4</td><td></td></tr>
+            <tr><td>C</td><td>5</td><td></td></tr>
+            <tr><td>B</td><td>6</td><td></td></tr>
+            <tr><td>B</td><td>7</td><td></td></tr>
+            <tr><td>A</td><td>8</td><td></td></tr>
+            <tr><td>B</td><td>9</td><td></td></tr>
+            <tr><td>A</td><td>10</td><td></td></tr>
+            <tr><td>B</td><td>11</td><td></td></tr>
+            <tr><td>B</td><td>12</td><td></td></tr>
+            <tr><td>B</td><td>13</td><td></td></tr>
+            <tr><td>D</td><td>14</td><td></td></tr>
+            <tr><td>C</td><td>15</td><td></td></tr>
+            <tr><td>A</td><td>16</td><td></td></tr>
+            <tr><td>B</td><td>17</td><td></td></tr>
+            <tr><td>A</td><td>18</td><td></td></tr>
+            <tr><td>D</td><td>19</td><td></td></tr>
+            <tr><td>C</td><td>20</td><td></td></tr>
+            <tr><td>B</td><td>21</td><td></td></tr>
+            <tr><td>B</td><td>22</td><td></td></tr>
+            <tr><td>D</td><td>23</td><td></td></tr>
+            <tr><td>D</td><td>24</td><td></td></tr>
+            <tr><td>B</td><td>25</td><td></td></tr>
+            <tr><td>B</td><td>26</td><td></td></tr>
+            <tr><td>B</td><td>27</td><td></td></tr>
+            <tr><td>B</td><td>28</td><td></td></tr>
+        </tbody>
+    </table>
 
-    <div>
-        <img src="5.jpg" alt="Image 5">
-    </div>
+    <table>
+        <caption>3.jpg</caption>
+        <thead>
+            <tr>
+                <th>answer</th>
+                <th>question_order</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>B</td><td>29</td></tr>
+            <tr><td>B</td><td>30</td></tr>
+            <tr><td>C</td><td>31</td></tr>
+            <tr><td>A</td><td>32</td></tr>
+            <tr><td>D</td><td>33</td></tr>
+            <tr><td>B</td><td>34</td></tr>
+            <tr><td>C</td><td>35</td></tr>
+            <tr><td>D</td><td>36</td></tr>
+            <tr><td>C</td><td>37</td></tr>
+            <tr><td>A</td><td>38</td></tr>
+            <tr><td>B</td><td>39</td></tr>
+            <tr><td>D</td><td>40</td></tr>
+            <tr><td>A</td><td>41</td></tr>
+            <tr><td>B</td><td>42</td></tr>
+            <tr><td>A</td><td>43</td></tr>
+            <tr><td>D</td><td>44</td></tr>
+            <tr><td>D</td><td>45</td></tr>
+            <tr><td>A</td><td>46</td></tr>
+            <tr><td>C</td><td>47</td></tr>
+            <tr><td>C</td><td>48</td></tr>
+            <tr><td>A</td><td>49</td></tr>
+            <tr><td>C</td><td>50</td></tr>
+            <tr><td>B</td><td>51</td></tr>
+            <tr><td>C</td><td>52</td></tr>
+            <tr><td>A</td><td>53</td></tr>
+            <tr><td>C</td><td>54</td></tr>
+            <tr><td>D</td><td>55</td></tr>
+        </tbody>
+    </table>
 
+    <table>
+        <caption>4.jpg</caption>
+        <thead>
+            <tr>
+                <th>answer</th>
+                <th>question_order</th>
+            </tr>
+        </thead>
+        <tbody>
 
-    <script>
-        // Default password is "secret123" - you should change this
-        const CORRECT_PASSWORD = "jyt2025";
+            <tr><td>C</td><td>56</td></tr>
+            <tr><td>A</td><td>57</td></tr>
+            <tr><td>B</td><td>58</td></tr>
+            <tr><td>B</td><td>59</td></tr>
+            <tr><td>A</td><td>60</td></tr>
+            <tr><td>B</td><td>61</td></tr>
+            <tr><td>B</td><td>62</td></tr>
+            <tr><td>D</td><td>63</td></tr>
+            <tr><td>B</td><td>64</td></tr>
+            <tr><td>C</td><td>65</td></tr>
+            <tr><td>C</td><td>66</td></tr>
+            <tr><td>D</td><td>67</td></tr>
+            <tr><td>A</td><td>68</td></tr>
+            <tr><td>B</td><td>69</td></tr>
+            <tr><td>B</td><td>70</td></tr>
+            <tr><td>D</td><td>71</td></tr>
+            <tr><td>A</td><td>72</td></tr>
+            <tr><td>A</td><td>73</td></tr>
+            <tr><td>A</td><td>74</td></tr>
+            <tr><td>D</td><td>75</td></tr>
+            <tr><td>D</td><td>76</td></tr>
+            <tr><td>A</td><td>77</td></tr>
+            <tr><td>A</td><td>78</td></tr>
+            <tr><td>D</td><td>79</td></tr>
+            <tr><td>C</td><td>80</td></tr>
+        </tbody>
+    </table>
 
-        function checkPassword() {
-            const passwordInput = document.getElementById("passwordInput");
-            const errorMessage = document.getElementById("errorMessage");
-            const loginContainer = document.getElementById("loginContainer");
-            const gallery = document.getElementById("gallery");
+    <table>
+        <caption>5.jpg</caption>
+        <thead>
+            <tr>
+                <th>answer</th>
+                <th>question_order</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>ABD</td><td>1</td></tr>
+            <tr><td>ABCD</td><td>2</td></tr>
+            <tr><td>AB</td><td>3</td></tr>
+            <tr><td>ABC</td><td>4</td></tr>
+            <tr><td>ABCD</td><td>5</td></tr>
+            <tr><td>AC</td><td>6</td></tr>
+            <tr><td>ABCD</td><td>7</td></tr>
+            <tr><td>CD</td><td>8</td></tr>
+            <tr><td>ABCD</td><td>9</td></tr>
+            <tr><td>ABCDE</td><td>10</td></tr>
+            <tr><td>ABC</td><td>11</td></tr>
+            <tr><td>ABC</td><td>12</td></tr>
+            <tr><td>ABCD</td><td>13</td></tr>
+            <tr><td>ABC</td><td>14</td></tr>
+            <tr><td>ABD</td><td>15</td></tr>
+            <tr><td>AB</td><td>16</td></tr>
+            <tr><td>AC</td><td>17</td></tr>
+            <tr><td>AB</td><td>18</td></tr>
+            <tr><td>ABCDE</td><td>19</td></tr>
+            <tr><td>ABCD</td><td>20</td></tr>
+        </tbody>
+    </table>
+ </div>
+<script>
+    document.getElementById('submit-btn').addEventListener('click', function() {
+        const password = document.getElementById('password-input').value;
+        const correctPassword = "jyt2025"; // 设置你的密码
 
-            if (passwordInput.value === CORRECT_PASSWORD) {
-                loginContainer.style.display = "none";
-                gallery.style.display = "block";
-                errorMessage.style.display = "none";
-            } else {
-                errorMessage.style.display = "block";
-                passwordInput.value = "";
-                passwordInput.focus();
-            }
+        if (password === correctPassword) {
+            document.getElementById('password-container').style.display = 'none';
+            document.querySelector('.content').style.display = 'block';
+        } else {
+            document.getElementById('error-msg').style.display = 'block';
         }
+    });
 
-        // Allow pressing Enter to submit
-        document.getElementById("passwordInput").addEventListener("keyup", function(event) {
-            if (event.key === "Enter") {
-                checkPassword();
-            }
-        });
-    </script>
+    // 添加回车键提交支持
+    document.getElementById('password-input').addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            document.getElementById('submit-btn').click();
+        }
+    });
+</script>
 </body>
 </html>
